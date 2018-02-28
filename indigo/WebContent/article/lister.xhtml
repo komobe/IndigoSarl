@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core" >
+
+    <ui:composition template="/template/layout.xhtml">
+        <ui:define name="title">Listes des articles</ui:define> 
+        <ui:define name="content">
+        	<!-- page content -->
+			<div class="right_col" role="main">
+				<div class="">
+				  <div class="clearfix"></div>				
+				  <div class="row">
+				    <div class="col-md-12 col-sm-12 col-xs-12">
+				      <div class="x_panel">
+				        <div class="x_title">
+				          <h2 class="col-sm-9">Liste des articles</h2>
+				          <c:if test="#{ user.isAdmin() }" >
+					          <div class="col-sm-3">
+					          	<h:outputLink value="ajouter.xhtml"  class="btn btn-info col-xs-12" style="margin:0;">
+					          		Ajouter un article
+					          	</h:outputLink>
+					          </div>
+				          </c:if>
+				          <div class="clearfix"></div>
+				        </div>
+				        <div class="x_content">
+				        	<h:dataTable value="#{articleBean.allArticles}" var="item"  id="datatable" styleClass="table table-striped table-bordered dataTable no-footer">			
+								<h:column>
+							      <f:facet name="header">Code</f:facet>
+							      <h:outputText value="#{item.code}" />
+							    </h:column>
+							    <h:column>
+							      <f:facet name="header">Catégorie</f:facet>
+							      <h:outputText value="#{item.libelleCategorie}" />
+							    </h:column>
+							    <h:column>
+							      <f:facet name="header">Désignation</f:facet>
+							      <h:outputText value="#{item.designation}" />
+							    </h:column>
+							    <h:column>
+							      <f:facet name="header">Quantité</f:facet>
+							      <h:outputText value="#{item.quantite}" />
+							    </h:column>
+							    <h:column>
+							      <f:facet name="header">Prix</f:facet>
+							      <h:outputText value="#{item.prix}" />
+							    </h:column>
+							     <h:column>
+							      <f:facet name="header">Date</f:facet>
+							      <h:outputText value="#{item.date}" />
+							    </h:column>
+							   <c:if test="#{ user.isAdmin() }" >
+							    <h:column>
+							      <f:facet name="header">Action</f:facet>
+							      <h:form>
+								      <h:commandLink value="Modifier " action="#{articleBean.recupItemEdit(item)}"  class="btn btn-info btn-xs">
+								      	<i class="fa fa-pencil"></i>
+								        <!-- <f:param name="code" value="#{item.code}" /> -->
+								      </h:commandLink>
+								      <h:commandLink value="Supprimer " action="#{articleBean.delete(item.code)}" class="btn btn-danger btn-xs btn-delete">
+								      	<i class="fa fa-trash-o"></i>
+								        <!-- <f:param name="code" value="#{item.code}" /> -->
+								      </h:commandLink>
+							      </h:form> 
+							    </h:column>
+							   </c:if>
+							</h:dataTable>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<!-- //page content -->
+        </ui:define>
+       <!-- 
+       	<ui:define name="modalSuppression">
+        	<ui:include src="/template/modalSuppression.xhtml"></ui:include>
+       	</ui:define>
+        -->
+    </ui:composition>
+
+</html>

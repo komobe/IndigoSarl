@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/indigo/javax.faces.resource/images/favicon.ico.xhtml" type="image/x-icon" />
+        <!--On met en place un titre par défaut-->
+        <title>
+            <ui:insert name="title">Titre par défaut</ui:insert>
+        </title>
+
+
+      	<f:facet name="css">
+      		<ui:insert name="stylesheet">
+	      	 <!--On place ici tous les fichiers css commun // Par Defaut-->
+	        	<ui:include src="/template/tagcss.xhtml" /> 
+			</ui:insert>
+			<ui:insert name="stylesheetSupplementaire">
+			</ui:insert>
+		</f:facet>
+    </h:head>
+
+    <h:body  class="nav-md">
+
+	   <div class="container body">
+    	 <div class="main_container">
+    	 	<div class="">
+		    	<!--Le Header et menu par defaut-->
+		        <ui:insert name="header">
+		            <h:panelGroup layout="block" styleClass="header-style no-print">
+		                <ui:include src="/template/menu.xhtml" />
+		            </h:panelGroup>
+		        </ui:insert>
+		        
+				<!--Le Contenu de la page-->
+				<h:panelGroup layout="block" styleClass="content-style">
+				    <ui:insert name="content"/>
+				</h:panelGroup>
+			
+				<!--Le Footer par d�faut-->
+				<ui:insert name="footer">
+				    <h:panelGroup layout="block" styleClass="footer-style">
+				        <ui:include src="/template/footer.xhtml" />
+				    </h:panelGroup>
+				</ui:insert>
+	       	</div>
+    	 </div>
+    	</div>      
+
+        <!--On place ici tous les fichiers javascript commun //par defaut-->
+        <ui:insert name="javascript">
+        	<ui:include src="/template/tagjs.xhtml" />
+		</ui:insert>
+
+		<ui:insert name="javascriptSupplementaire">
+		</ui:insert>
+    </h:body>
+</html>

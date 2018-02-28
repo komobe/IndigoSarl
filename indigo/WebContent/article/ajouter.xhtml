@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="/template/layout.xhtml">
+        <ui:define name="title">Ajouter un article</ui:define> 
+        <ui:define name="content">
+         	<!-- page content -->
+       		 <div class="right_col" role="main">
+       			<div class="">
+				  <div class="clearfix"></div>				
+				  <div class="row">
+				    <div class="col-md-12 col-sm-12 col-xs-12">
+				      <div class="x_panel">
+				        <div class="x_title">
+				          <h2>Ajouter un article</h2>
+				          <div class="clearfix"></div>
+				        </div>
+				        <div class="x_content">
+				        				        	
+				        <h:messages globalOnly="true" showSummary="true" showDetail="true"
+				          	infoClass="alert alert-success alert-dismissable fade in"  
+				           	warnClass="alert alert-info alert-dismissable fade in"  
+				           	errorClass="alert alert-warning alert-dismissable fade in"  
+				           	fatalClass="alert alert-danger alert-dismissable fade in"> 
+				            <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a> -->
+				        </h:messages>
+				        
+				          <h:form class="form-horizontal form-label-left" novalidate="novalidate">
+
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="codeCategorie">Code categorie <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <h:selectOneMenu value="#{articleBean.item.codeCategorie}"  styleClass="form-control">
+						   			<f:selectItems value="#{articleBean.listeCategories}" />
+						   		  </h:selectOneMenu>
+				              </div>
+				            </div>
+				            
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="designation">Désignation <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText id="designation" value="#{articleBean.item.designation}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				             
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="quantite">Quantité <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText id="quantite" value="#{articleBean.item.quantite}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="prix">Prix <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText id="prix" value="#{articleBean.item.prix}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				            
+				           	<div class="clearfix"></div>
+				            
+				            <div class="ln_solid"></div>
+				            <div class="form-group" align="center">
+				              <div class="col-md-6 col-md-offset-3">
+				                <h:commandButton onreset="true" id="reset"  class="btn btn-primary" value="Annuler" />
+		              			<h:commandButton id="send"  class="btn btn-success" value="Ajouter" action="#{articleBean.add}"/>
+				              </div>
+				            </div>
+				          </h:form>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+       		 </div>
+		    <!-- //page content -->
+        </ui:define>
+        
+    </ui:composition>
+
+</html>

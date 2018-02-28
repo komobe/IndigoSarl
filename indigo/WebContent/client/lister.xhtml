@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core" >
+
+    <ui:composition template="/template/layout.xhtml">
+        <ui:define name="title">Liste des clients</ui:define> 
+        <ui:define name="content">
+        	<!-- page content -->
+			<div class="right_col" role="main">
+				<div class="">
+				  <div class="clearfix"></div>				
+				  <div class="row">
+				    <div class="col-md-12 col-sm-12 col-xs-12">
+				      <div class="x_panel">
+				        <div class="x_title">
+				          <h2 class="col-sm-9">Liste des clients</h2>
+				          <c:if test="#{ user.isAdmin() }" >
+					          <div class="col-sm-3">
+					          	<h:outputLink value="ajouter.xhtml"  class="btn btn-info col-xs-12" style="margin:0;">
+					          		Ajouter un client
+					          	</h:outputLink>
+					          </div>
+				          </c:if>
+				          <div class="clearfix"></div>
+				        </div>
+				        <div class="x_content">
+				        	
+							<h:dataTable value="#{ clientBean.allClients }" var="itemClient"  id="datatable" class="table table-striped table-bordered">		
+								<h:column>
+							      <f:facet name="header">Code</f:facet>
+							      <h:outputText value="#{itemClient.code}" />
+							    </h:column>
+							    <h:column>
+							      <f:facet name="header">Nom</f:facet>
+							      <h:outputText value="#{itemClient.nom}" />
+							    </h:column>
+							    <h:column>
+							      <f:facet name="header">Prénom</f:facet>
+							      <h:outputText value="#{itemClient.prenom}" />
+							    </h:column>
+							    <h:column>
+							      <f:facet name="header">Carte fidelité</f:facet>
+							      <h:outputText value="#{ itemClient.fideliter()}" />
+							    </h:column>
+							     <h:column>
+							      <f:facet name="header">Date inscription</f:facet>
+							      <h:outputText value="#{itemClient.dateInscription}" />
+							    </h:column>
+							   <c:if test="#{ user.isAdmin() }" >
+							    <h:column>
+							      <f:facet name="header">Action</f:facet>
+							      <h:form>
+								      <h:commandLink value="Modifier " action="#{clientBean.recupItemEdit(itemClient)}"  class="btn btn-info btn-xs">
+								      	<i class="fa fa-pencil"></i>
+								        <!-- <f:param name="code" value="#{itemClient.code}" /> -->
+								      </h:commandLink>
+								      <h:commandLink value="Supprimer " action="#{clientBean.delete(itemClient.code)}" class="btn btn-danger btn-xs btn-delete">
+								      	<i class="fa fa-trash-o"></i>
+								        <!-- <f:param name="code" value="#{itemClient.code}" /> -->
+								      </h:commandLink>
+							      </h:form>
+							    </h:column>	
+							   </c:if>		
+							</h:dataTable>							
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<!-- //page content -->
+        </ui:define>
+        
+        <!-- 
+       	<ui:define name="modalSuppression">
+        	<ui:include src="/template/modalSuppression.xhtml"></ui:include>
+       	</ui:define>
+        -->
+        
+    </ui:composition>
+
+</html>

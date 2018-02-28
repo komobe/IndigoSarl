@@ -1,0 +1,173 @@
+.login {
+    background: url("/indigo/javax.faces.resource/build/images/background_login.jpg.xhtml")  center center no-repeat #000;
+    background-size: cover;
+    overflow:hidden;
+}
+
+.login .fa-globe {
+    font-size: 26px
+}
+
+
+.login_box {
+    padding: 20px;
+    margin: auto
+}
+
+
+.login_content {
+    margin: 0 auto;
+    position: relative;
+    text-shadow: 0 1px 0 #fff;
+    min-width: 280px
+}
+
+.login_content a,
+.login_content .btn-default:hover {
+    text-decoration: none
+}
+
+.login_content a:hover {
+    text-decoration: underline
+}
+
+.login_content h1 {
+    font: normal 25px Helvetica, Arial, sans-serif;
+    letter-spacing: -0.05em;
+    line-height: 10px;
+    margin: 10px 0 30px;
+    padding: 15px;
+    text-align:center;   
+}
+
+
+.login_content form {
+    margin: 20px 0;
+    position: relative
+}
+
+.login_content form div a {
+    font-size: 12px;
+    margin: 10px 15px 0 0
+}
+
+
+.overlay {
+    background: rgba(0,0,0,.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+		
+
+			
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#username {
+    background-position: 10px 10px !important
+}
+#password {
+    background-position: 10px -53px !important
+}
+
+.login_content form input[type='submit'], #content form .submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+
+
+a.hiddenanchor {
+    display: none
+}
+.login_wrapper {
+    right: 0px;
+    margin: 0px auto;
+    margin-top: 3%;
+    max-width: 350px;
+    position: relative
+}
+.registration_form,
+.login_form {
+    position: absolute;
+    top: 0px;
+    width: 100%
+}
+.registration_form {
+    z-index: 21;
+    opacity: 0;
+    width: 100%
+}
+.login_form {
+    z-index: 22;
+    background: #f7f7f7;
+    border: 3px solid #f1f1f1;
+}
+#signup:target ~ .login_wrapper .registration_form,
+#signin:target ~ .login_wrapper .login_form {
+    z-index: 22;
+    animation-name: fadeInLeft;
+    animation-delay: .1s
+}
+#signup:target ~ .login_wrapper .login_form,
+#signin:target ~ .login_wrapper .registration_form {
+    animation-name: fadeOutLeft
+}

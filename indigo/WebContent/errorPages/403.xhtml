@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core" >
+
+    <ui:composition template="/template/layout.xhtml">
+        <ui:define name="title">Acces interdit</ui:define> 
+        <ui:define name="stylesheet">
+	       <ui:include src="/template/errortagcss.xhtml" /> 
+		</ui:define>
+		<ui:define name="stylesheetSupplementaire">
+			<h:outputStylesheet  library="build" name="css/error.css" rel="stylesheet"/>
+		</ui:define>
+        <ui:define name="content">
+         <!-- page content -->
+       		 <div class="right_col" role="main">
+	          <div class="">
+	            <div class="clearfix"></div>	
+	            <div class="row">
+	              <div class="col-md-12 col-sm-12 col-xs-12">
+	                <div class="x_panel">
+	                  <div class="x_title">
+	                    <h2>Acces interdit</h2>
+	                    <div class="clearfix"></div>
+	                  </div>
+	                  <div class="x_content">
+	                  	<div class="title-block-container text-center">
+	                  		<h:graphicImage name="images/panneau-interdit.png"  styleClass="img-responsive" />
+	                  		<h1 class="lg-heading" align="center">403!</h1>
+							<p>Malheureusement, vous n'êtes pas autorisé à voir cette page.</p>
+	                  	</div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+       	<!-- //page content -->
+        </ui:define>
+        
+    </ui:composition>
+
+</html>

@@ -1,0 +1,22 @@
+.title-block-container {
+    padding: 0;
+    width: 100%;
+    z-index: 15;
+    display: block;
+    font-size: 18px;
+    position: relative;
+    margin: 0 auto 15px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.lg-heading {
+  font-size: 150px;
+  font-family: arial;
+  font-weight: bolder;
+}
+
+.title-block-container > img{
+	display: inline-block;
+	width: 190px;
+}

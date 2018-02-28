@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+       <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <link rel="icon" href="/indigo/javax.faces.resource/images/favicon.ico.xhtml" type="image/x-icon" />
+       <!--On met en place un titre par défaut-->
+        <title> Login - Authentification </title>
+
+      	<f:facet name="css">
+	        <!-- Bootstrap -->
+			<h:outputStylesheet library="vendors" name="bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+			 <!-- Font Awesome -->
+			<h:outputStylesheet library="vendors" name="font-awesome/css/font-awesome.css" rel="stylesheet"/>
+			<h:outputStylesheet library="build" name="css/custom.css" rel="stylesheet" />
+			<h:outputStylesheet library="build" name="css/login.css" rel="stylesheet" />
+		</f:facet>
+    </h:head>
+
+	<h:body class="login">
+		<!--DARK OVERLAY-->
+		<div class="overlay"></div>
+		<!--/DARK OVERLAY-->
+	      <div class="login_wrapper">
+	        <div class="animate form login_form">
+	          <section class="login_content">
+	         	<h1>Authentification</h1>
+				<h:form>
+				  <div class="imgcontainer">
+				    <i class="fa fa-users" style="font-size:10rem;"></i>
+				  </div>
+				<div class="container">
+				    <h:outputLabel for="username"><b>Nom d'utilisateur</b></h:outputLabel>
+				    <h:inputText value="#{userBean.item.username}" placeholder="Entrer votre nom d'utilisateur" id="username" required="true" />
+				
+				    <h:outputLabel for="password"><b>Mot de passe</b></h:outputLabel>
+				    <h:inputSecret value="#{userBean.item.password}"  placeholder="Entrer votre mot de passe" id="password" required="true" />
+				        
+				    <h:commandButton value="Se connecter"  action="#{userBean.login}" />
+				    <!-- <h:inputText type="checkbox" checked="true" id="remember-me" /> <h:outputLabel for="remember-me">Se souvenir de moi</h:outputLabel> -->
+				  </div>
+				</h:form>
+	          </section>
+	        </div>
+	
+	      </div>  
+    
+				
+	</h:body>
+</html>

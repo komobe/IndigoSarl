@@ -1,0 +1,135 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core" >
+
+    <ui:composition template="/template/layout.xhtml">
+        <ui:define name="title">Ajouter un client</ui:define> 
+        <ui:define name="content">
+         <!-- page content -->
+       		 <div class="right_col" role="main">
+       			<div class="">
+				  <div class="clearfix"></div>				
+				  <div class="row">
+				    <div class="col-md-12 col-sm-12 col-xs-12">
+				      <div class="x_panel">
+				        <div class="x_title">
+				          <h2>Ajouter Client</h2>
+				          <div class="clearfix"></div>
+				        </div>
+				        <div class="x_content">
+				
+						 <h:messages globalOnly="true" showSummary="true" showDetail="true"
+				          	infoClass="alert alert-success alert-dismissable fade in"  
+				           	warnClass="alert alert-info alert-dismissable fade in"  
+				           	errorClass="alert alert-warning alert-dismissable fade in"  
+				           	fatalClass="alert alert-danger alert-dismissable fade in"> 
+				            <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a> -->
+				          </h:messages>
+				        
+				          <h:form class="form-horizontal form-label-left" novalidate="novalidate">
+
+				           <!-- <span class="section">Personal Info</span>  --> 				         
+				          	     	
+				     		<div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="nom">Nom <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText  id="nom" value="#{clientBean.item.nom}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            			        	
+							<div class="item form-group col-md-6" align="center">
+					         	<div class="checkbox">
+					                <h:outputLabel class="control-label">
+					                 Carte fidelié <h:selectBooleanCheckbox  class="flat" checked="checked" value="#{clientBean.item.boolCarteFidelite}" /> 
+					                </h:outputLabel>
+					             </div>
+					        </div>    
+			
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="prenom">Prénoms <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12"> 
+				                <h:inputText  id="prenom" value="#{clientBean.item.prenom}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="adresse">Adresse 
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText  id="adresse" value="#{clientBean.item.adresse}"  class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Code postal 
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText  id="code_postal" value="#{clientBean.item.codePostal}"  class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="ville">Ville <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText  id="ville" value="#{clientBean.item.ville}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				     		
+				     		
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="tel_fixe">Tél.fixe 
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText  id="tel_fixe" value="#{clientBean.item.telFixe}" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				           <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="mobilis">Mobile <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText  id="mobilis" value="#{clientBean.item.mobilis}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+				            
+				            <div class="item form-group col-md-6">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
+				              </h:outputLabel>
+				              <div class="col-md-9 col-sm-9 col-xs-12">
+				                <h:inputText type="email" id="email" value="#{clientBean.item.email}" required="true" class="form-control col-md-7 col-xs-12" />
+				              </div>
+				            </div>
+
+				           	<div class="clearfix"></div>
+				            <div class="item form-group">
+				              <h:outputLabel class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Remarque 
+				              </h:outputLabel>
+				              <div class="col-md-6 col-sm-6 col-xs-12">
+				                <h:inputTextarea id="textarea"  value="#{clientBean.item.remarques}" class="form-control col-md-7 col-xs-12" rows="6" />
+				              </div>
+				            </div>
+				     		
+				            <div class="ln_solid"></div>
+				            <div class="form-group" align="center">
+				              <div class="col-md-6 col-md-offset-3">
+				                <h:commandButton onreset="true" id="reset"  class="btn btn-primary" value="Annuler" />
+				                <h:commandButton id="send"  class="btn btn-success" value="Enregister" action="#{clientBean.add}"/>
+				              </div>
+				            </div>
+				          </h:form>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+       		 </div>
+       	<!-- //page content -->
+        </ui:define>
+        
+    </ui:composition>
+
+</html>
