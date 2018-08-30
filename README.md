@@ -1,12 +1,7 @@
 # IndigoSarl
 
 
-0.	Membres du groupe
-=====================
-- KONE Moro
-- TIA Mabea Léonel Jospin
-- BADOLO Marius
-- TUO Fansely
+0.Auteur: KONE Moro
 
 
 
