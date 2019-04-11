@@ -35,5 +35,5 @@
 
 - Entrer le username et password de l'user que vous venez de créer pour
  pour s'identifier afin d'utiliser les differents modules de l'application
-- Les codes des enregistrements sont générés
+- Les codes des enregistrements sont générés automatiquement
 	
