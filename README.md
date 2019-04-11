@@ -8,7 +8,7 @@
 1.	Les prerequis
 ==================
 
-- Avoir WampServer 3.0.6 ou Logiciel equivalent
+- Avoir WampServer 3.0.6 ou Logiciel équivalent
 - Avoir au moins Java 8 (soit un JRE soit un JDK Version 1.8.0_111)
 - Avoir au moins installé eclipse JEE version Oxygen
 - Avoir installé au moins Glashfish v4 ou tomcat v8.5
